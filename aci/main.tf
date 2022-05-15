@@ -21,7 +21,7 @@ variable "location2" {
 }
 variable "resource_group_name" {
   type        = string
-  description = "Resource Group name to where resources are going to be deployed"
+  description = "Resource Group name to where resources are going to be deployed, yeah"
   default     = "test"
 }
 variable "resource_group_name2" {
