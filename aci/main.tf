@@ -1,17 +1,18 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-    }
-  }
-}
 provider "azurerm" {
   features {}
+}
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "terraform"
+    storage_account_name = "tfstate123456789"
+    container_name       = "tfstatedevops2806"
+    key                  = "tfstatedevops.tfstate"
+  }
 }
 variable "location" {
   type        = string
   description = "Location of Azure resources"
-  default     = "uksouth"
+  default     = "canadaeast"
 }
 variable "resource_group_name" {
   type        = string
@@ -26,7 +27,7 @@ variable "container_group_name" {
 variable "container_group_dns" {
   type        = string
   description = "aci name"
-  default     = "nginx"
+  default     = "nginx221851544"
 }
 resource "azurerm_resource_group" "demo" {
   name     = var.resource_group_name
