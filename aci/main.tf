@@ -11,7 +11,7 @@ terraform {
 }
 variable "location" {
   type        = string
-  description = "Location of Azure resources"
+  description = "Location of Azure resources 1"
   default     = "canadaeast"
 }
 variable "location2" {
