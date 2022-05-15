@@ -14,11 +14,6 @@ variable "location" {
   description = "Location of Azure resources"
   default     = "canadaeast"
 }
-variable "location2" {
-  type        = string
-  description = "Location of Azure resources 2"
-  default     = "canadaeast"
-}
 variable "resource_group_name" {
   type        = string
   description = "Resource Group name to where resources are going to be deployed"
@@ -38,9 +33,9 @@ resource "azurerm_resource_group" "demo" {
   name     = var.resource_group_name
   location = var.location
 }
-resource "azurerm_resource_group" "demo2" {
-  name     = var.resource_group_name2
-  location = var.location2
+resource "azurerm_resource_group" "rgdemo" {
+  name     = "rgdemo"
+  location = var.location
 }
 resource "azurerm_container_group" "aci" {
   name                = var.container_group_name
